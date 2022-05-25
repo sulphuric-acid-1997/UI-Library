@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class NumberPlate extends StatelessWidget {
@@ -7,13 +6,15 @@ class NumberPlate extends StatelessWidget {
   final String number;
 
   const NumberPlate({
-    Key? key, required this.place, required this.series, required this.number,
+    Key? key,
+    required this.place,
+    required this.series,
+    required this.number,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width ;
+    double width = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 50),
       decoration: BoxDecoration(
@@ -26,21 +27,22 @@ class NumberPlate extends StatelessWidget {
           Column(
             children: [
               Text(place.toUpperCase(),
-                  style: TextStyle(fontSize: width * 0.06, fontWeight: FontWeight.w500).copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                          fontSize: width * 0.06, fontWeight: FontWeight.w500)
+                      .copyWith(
+                          color: Colors.black, fontWeight: FontWeight.bold)),
               Text(series.toUpperCase(),
-                  style: TextStyle(fontSize: width * 0.06, fontWeight: FontWeight.w500).copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+                  style: TextStyle(
+                          fontSize: width * 0.06, fontWeight: FontWeight.w500)
+                      .copyWith(
+                          color: Colors.black, fontWeight: FontWeight.bold)),
             ],
           ),
           Text(number,
               style: TextStyle(
-      fontSize: width * 0.12,
-      fontStyle: FontStyle.normal,
-    ).copyWith(
-                  color: Colors.black, fontWeight: FontWeight.bold)),
+                fontSize: width * 0.12,
+                fontStyle: FontStyle.normal,
+              ).copyWith(color: Colors.black, fontWeight: FontWeight.bold)),
         ],
       ),
     );

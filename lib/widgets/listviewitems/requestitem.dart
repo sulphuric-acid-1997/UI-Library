@@ -3,7 +3,7 @@ import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
 import '../../resources/values_manager.dart';
 
 class RequestItem extends StatelessWidget {
-  const RequestItem( {
+  const RequestItem({
     Key? key,
     required this.onclick,
     required this.date,
@@ -11,6 +11,11 @@ class RequestItem extends StatelessWidget {
     required this.status,
     required this.approvalemail,
     required this.department,
+    this.caldate,
+    this.weekday,
+    this.weekdaystyle,
+    this.daystyle,
+    this.monthstyle,
   }) : super(key: key);
 
   // final RequestListDataModel data;
@@ -20,6 +25,13 @@ class RequestItem extends StatelessWidget {
   final String status;
   final String approvalemail;
   final String department;
+
+  final DateTime? caldate;
+  final String? weekday;
+  final TextStyle? weekdaystyle;
+  final TextStyle? daystyle;
+
+  final TextStyle? monthstyle;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +53,13 @@ class RequestItem extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      AppCalendar(date: date),
+                      AppCalendar(
+                        date: caldate,
+                        weekday: weekday,
+                        weekdaystyle: weekdaystyle,
+                        daystyle: daystyle,
+                        monthstyle: monthstyle,
+                      ),
                       const SizedBox(
                         width: AppSize.s30,
                       ),

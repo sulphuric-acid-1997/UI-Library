@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -12,7 +11,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
-      width:  MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width,
       child: Stack(children: <Widget>[
         Opacity(
           opacity: 0.5,
@@ -24,7 +23,10 @@ class Header extends StatelessWidget {
         ),
         Center(
             child: Text(title,
-                style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.06, fontWeight: FontWeight.w500).copyWith(color: Colors.black))),
+                style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width * 0.06,
+                        fontWeight: FontWeight.w500)
+                    .copyWith(color: Colors.black))),
       ]),
     );
   }

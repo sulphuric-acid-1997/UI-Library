@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-
   @override
   final Size preferredSize;
   final String title;
@@ -16,17 +15,18 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final double elevation;
   final double leadingWidth;
 
-  CustomAppBar({Key? key,
+  CustomAppBar({
+    Key? key,
     this.title = '',
     required this.onPressNotification,
     required this.onPressProfile,
-       this.backgroundColor = Colors.white,
-        this.automaticallyImplyLeading = false,
-        this.toolbarHeight = 56,
-        this.toolbarOpacity =  0.5,
-        this.shadowColor = Colors.grey,
-        this.elevation = 15,
-        this.leadingWidth = 0,
+    this.backgroundColor = Colors.white,
+    this.automaticallyImplyLeading = false,
+    this.toolbarHeight = 56,
+    this.toolbarOpacity = 0.5,
+    this.shadowColor = Colors.grey,
+    this.elevation = 15,
+    this.leadingWidth = 0,
   })  : preferredSize = const Size.fromHeight(50.0),
         super(key: key);
 
@@ -53,7 +53,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           onPressed: () => onPressNotification,
         ),
         IconButton(
-          icon: const Icon(Icons.account_circle_rounded, color : Colors.black),
+          icon: const Icon(Icons.account_circle_rounded, color: Colors.black),
           onPressed: () => onPressProfile,
         ),
       ],

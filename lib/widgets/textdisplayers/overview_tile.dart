@@ -29,8 +29,9 @@ class OverviewTile extends StatelessWidget {
               style: TextStyle(color: titleColor, fontSize: titleFontSize)),
           space,
           Text(subTitle,
-              style:
-                  TextStyle(color: subTitleColor.withOpacity(0.5), fontSize: subTitleFontSize)),
+              style: TextStyle(
+                  color: subTitleColor.withOpacity(0.5),
+                  fontSize: subTitleFontSize)),
         ],
       ),
     );

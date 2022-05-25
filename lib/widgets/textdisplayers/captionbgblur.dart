@@ -21,23 +21,20 @@ class CaptionBgblur extends StatelessWidget {
           alignment: Alignment.center,
           child: SizedBox(
             width: double.infinity,
-            child: 
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 225, 225, 225)
-                          .withOpacity(0.4)),
-                  child: AutoSizeText(
-                    "Instrumental in Past... \nInvested in Future",
-                    minFontSize: AppSize.s20,
-                    style: TextStyle(
-                      fontSize: width * 0.08,
-                      fontStyle: FontStyle.normal,
-                    ).copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 225, 225, 225)
+                      .withOpacity(0.4)),
+              child: AutoSizeText(
+                "Instrumental in Past... \nInvested in Future",
+                minFontSize: AppSize.s20,
+                style: TextStyle(
+                  fontSize: width * 0.08,
+                  fontStyle: FontStyle.normal,
+                ).copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
         ),
       ),

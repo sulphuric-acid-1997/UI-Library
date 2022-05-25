@@ -9,8 +9,14 @@ class AppCalendar extends StatelessWidget {
 
   final TextStyle? monthstyle;
 
-
-  const AppCalendar({Key? key, this.date, this.weekday, this.weekdaystyle, this.daystyle, this.monthstyle, }) : super(key: key);
+  const AppCalendar({
+    Key? key,
+    this.date,
+    this.weekday,
+    this.weekdaystyle,
+    this.daystyle,
+    this.monthstyle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +28,23 @@ class AppCalendar extends StatelessWidget {
       children: <Widget>[
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Text(weekday ?? "THU",
-            style: weekdaystyle ?? TextStyle(fontSize: width * 0.045, color: Colors.black)
+            style: weekdaystyle ??
+                TextStyle(fontSize: width * 0.045, color: Colors.black)
             //  TextStyle(
             //   color: Colors.black54,
             //   fontSize: FontSize.s14,
             // ),
             ),
         Text(date == null ? '05' : date!.day.toString(),
-            style: daystyle ?? TextStyle(fontSize: width * 0.045, color: Colors.black)),
+            style: daystyle ??
+                TextStyle(fontSize: width * 0.045, color: Colors.black)),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: AppPadding.p3),
           child: Container(height: 1.0, width: 30.0, color: Colors.black54),
         ),
         Text("APR",
-            style: monthstyle ?? TextStyle(fontSize: width * 0.045, color: Colors.black)),
+            style: monthstyle ??
+                TextStyle(fontSize: width * 0.045, color: Colors.black)),
       ],
     );
   }

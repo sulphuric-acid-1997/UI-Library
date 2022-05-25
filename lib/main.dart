@@ -50,8 +50,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     var space = const SizedBox(height: 20.0);
@@ -65,22 +63,27 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CustomAppBarPage()),
-                );
-              }, child: Text('AppBar')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CustomAppBarPage()),
+                    );
+                  },
+                  child: const Text('AppBar')),
               space,
-              ElevatedButton(onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => OverviewPage()),
-                );
-              }, child: Text('OverviewTile'))
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OverviewPage()),
+                    );
+                  },
+                  child: const Text('OverviewTile'))
             ],
           ),
-        )
-    );
+        ));
   }
 }

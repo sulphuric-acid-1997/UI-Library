@@ -1,4 +1,3 @@
-
 import 'package:flutter/widgets.dart';
 
 class _ClipShadowPainter extends CustomPainter {
@@ -6,7 +5,7 @@ class _ClipShadowPainter extends CustomPainter {
     required this.clipper,
     required this.boxShadows,
   });
-  
+
   final CustomClipper<Path> clipper;
   final List<BoxShadow> boxShadows;
 
@@ -41,19 +40,13 @@ class ClipShadow extends StatelessWidget {
 
   final Widget child;
 
-  const ClipShadow({
-    required this.boxShadow,
-    required this.clipper,
-    required this.child
-  });
+  const ClipShadow(
+      {required this.boxShadow, required this.clipper, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: _ClipShadowPainter(
-          boxShadows: boxShadow,
-          clipper: clipper
-      ),
+      painter: _ClipShadowPainter(boxShadows: boxShadow, clipper: clipper),
       child: ClipPath(
         clipper: clipper,
         child: child,

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/widgets/appbar/custom_app_bar.dart';
 
@@ -9,7 +7,10 @@ class CustomAppBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(onPressNotification: () {  }, onPressProfile: () {  },),
+      appBar: CustomAppBar(
+        onPressNotification: () {},
+        onPressProfile: () {},
+      ),
       body: Container(),
     );
   }

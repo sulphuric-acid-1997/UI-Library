@@ -1,4 +1,3 @@
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/datamodels/notifications.dart';
@@ -28,17 +27,17 @@ class NotificationListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             AutoSizeText(
               data.dateTime,
-              style: const TextStyle(color: Color(0xFF96989C), fontSize: FontSize.s15),
-                minFontSize: FontSize.s15,
+              style: const TextStyle(
+                  color: Color(0xFF96989C), fontSize: FontSize.s15),
+              minFontSize: FontSize.s15,
             ),
             AutoSizeText(
               data.content,
-              style: const TextStyle(color: Colors.black, fontSize: FontSize.s20 ),
-                minFontSize: FontSize.s20,
-
+              style:
+                  const TextStyle(color: Colors.black, fontSize: FontSize.s20),
+              minFontSize: FontSize.s20,
             ),
           ],
         ),

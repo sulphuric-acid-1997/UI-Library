@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class TicketClipper extends CustomClipper<Path> {
@@ -10,10 +9,10 @@ class TicketClipper extends CustomClipper<Path> {
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0.0);
 
+    path.addOval(
+        Rect.fromCircle(center: Offset(0.0, size.height / 1.6), radius: 30.0));
     path.addOval(Rect.fromCircle(
-        center: Offset(0.0, size.height / 1.6), radius: 30.0));
-    path.addOval(Rect.fromCircle(
-        center: Offset(size.width, size.height /  1.6), radius: 30.0));
+        center: Offset(size.width, size.height / 1.6), radius: 30.0));
 
     return path;
   }

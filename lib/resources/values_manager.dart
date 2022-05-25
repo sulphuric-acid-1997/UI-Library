@@ -53,6 +53,7 @@ class AppSize {
   static const double s100 = 100.0;
   static const double s160 = 160.0;
 }
+
 class AppIcon {
   static const double i8 = 8.0;
   static const double i12 = 12.0;

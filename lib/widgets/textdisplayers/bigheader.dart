@@ -4,12 +4,12 @@ class BigHeader extends StatelessWidget {
   final String imageassets;
   final String title;
   final TextStyle? titlestyle;
-  const BigHeader({
-    Key? key,
-    this.title = 'Lorem ipsum dolor sit amet, consectetur',
-    this.imageassets = 'assets/images/pcfc_logo.jpeg',
-    this.titlestyle
-  }) : super(key: key);
+  const BigHeader(
+      {Key? key,
+      this.title = 'Lorem ipsum dolor sit amet, consectetur',
+      this.imageassets = 'assets/images/pcfc_logo.jpeg',
+      this.titlestyle})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
@@ -37,8 +37,9 @@ class BigHeader extends StatelessWidget {
             ),
             Text(
               title,
-              style:titlestyle ?? TextStyle(
-                  fontSize: width * 0.06, fontWeight: FontWeight.w500),
+              style: titlestyle ??
+                  TextStyle(
+                      fontSize: width * 0.06, fontWeight: FontWeight.w500),
             ),
           ],
         ),

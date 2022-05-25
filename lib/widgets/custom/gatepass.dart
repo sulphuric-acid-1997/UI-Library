@@ -12,6 +12,12 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? companystyle;
   final String subtext;
   final TextStyle? subtextstyle;
+  final DateTime? date;
+  final String? weekday;
+  final TextStyle? weekdaystyle;
+  final TextStyle? daystyle;
+
+  final TextStyle? monthstyle;
 
   const GatePassTicket({
     Key? key,
@@ -22,6 +28,11 @@ class GatePassTicket extends StatelessWidget {
     this.companystyle,
     this.subtext = 'Ajman, United Arab Emirates',
     this.subtextstyle,
+    this.date,
+    this.weekday,
+    this.weekdaystyle,
+    this.daystyle,
+    this.monthstyle,
   }) : super(key: key);
 
   @override
@@ -104,7 +115,13 @@ class GatePassTicket extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(AppPadding.p5),
-                          child: AppCalendar(),
+                          child: AppCalendar(
+                            date: date,
+                            weekday: weekday,
+                            weekdaystyle: weekdaystyle,
+                            daystyle: daystyle,
+                            monthstyle: monthstyle,
+                          ),
                         ),
                         SizedBox(
                           width: width * 0.05,

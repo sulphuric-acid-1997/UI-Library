@@ -10,7 +10,13 @@ class PaymentStatus extends StatelessWidget {
   final String amountpaid;
   final String bank;
 
-  const PaymentStatus({Key? key, required this.status, required this.transcationNo, required this.amountpaid, required this.bank}) : super(key: key);
+  const PaymentStatus(
+      {Key? key,
+      required this.status,
+      required this.transcationNo,
+      required this.amountpaid,
+      required this.bank})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +79,9 @@ class PaymentStatus extends StatelessWidget {
                 indent: 0.5,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              getRow('Amount Paid:', '${amountpaid}(AED)'),
+              getRow('Amount Paid:', '$amountpaid(AED)'),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              getRow('Bank:', '${bank}'),
+              getRow('Bank:', bank),
             ],
           ),
         ),
