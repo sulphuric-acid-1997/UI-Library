@@ -17,9 +17,11 @@ class GatePassTicket extends StatelessWidget {
     Key? key,
     required this.imageurl,
     required this.name,
-     this.namestyle,
+    this.namestyle,
     required this.company,
-     this.companystyle, this.subtext = 'Ajman, United Arab Emirates',  this.subtextstyle,
+    this.companystyle,
+    this.subtext = 'Ajman, United Arab Emirates',
+    this.subtextstyle,
   }) : super(key: key);
 
   @override
@@ -48,8 +50,8 @@ class GatePassTicket extends StatelessWidget {
                   children: <Widget>[
                     SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     Container(
-                      width: 100.0,
-                      height: 100.0,
+                      width: width * 0.25,
+                      height: width * 0.25,
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         image: DecorationImage(
@@ -57,7 +59,7 @@ class GatePassTicket extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                         borderRadius:
-                            const BorderRadius.all(Radius.circular(50.0)),
+                            BorderRadius.all(Radius.circular(width * 0.125)),
                         border: Border.all(
                           color: Colors.black26,
                           width: 2.0,
@@ -67,8 +69,9 @@ class GatePassTicket extends StatelessWidget {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     Text(
                       name,
-                      style: namestyle ?? TextStyle(
-                          fontSize: width * 0.045, color: Colors.black),
+                      style: namestyle ??
+                          TextStyle(
+                              fontSize: width * 0.045, color: Colors.black),
                       // TextStyle(
                       //   color: Colors.black,
                       //   fontWeight: FontWeight.w400,
@@ -100,7 +103,7 @@ class GatePassTicket extends StatelessWidget {
                     Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(AppPadding.p10),
+                          padding: const EdgeInsets.all(AppPadding.p5),
                           child: AppCalendar(),
                         ),
                         SizedBox(
@@ -111,12 +114,13 @@ class GatePassTicket extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(company,
-                                style: companystyle ?? TextStyle(
-                                        fontSize: width * 0.05,
-                                        fontWeight: FontWeight.w300)
-                                    .copyWith(
-                                        fontWeight: FontWeightManager.bold,
-                                        color: Colors.black)
+                                style: companystyle ??
+                                    TextStyle(
+                                            fontSize: width * 0.05,
+                                            fontWeight: FontWeight.w300)
+                                        .copyWith(
+                                            fontWeight: FontWeightManager.bold,
+                                            color: Colors.black)
                                 // TextStyle(
                                 //   color: Colors.black,
                                 //   fontWeight: FontWeight.w600,
@@ -126,10 +130,11 @@ class GatePassTicket extends StatelessWidget {
                             SizedBox(
                                 height:
                                     MediaQuery.of(context).size.height * 0.01),
-                            Text("Ajman, United Arab Emirates",
-                                style: subtextstyle ?? TextStyle(
-                                    fontSize: width * 0.04,
-                                    fontWeight: FontWeight.w300)
+                            Text(subtext,
+                                style: subtextstyle ??
+                                    TextStyle(
+                                        fontSize: width * 0.04,
+                                        fontWeight: FontWeight.w300)
                                 // TextStyle(
                                 //   color: Colors.black,
                                 //   fontWeight: FontWeight.w400,
@@ -148,18 +153,18 @@ class GatePassTicket extends StatelessWidget {
           ),
         ),
         Container(
-          width: 70,
-          height: 70,
+          width: width * 0.2,
+          height: width * 0.2,
           decoration: const ShapeDecoration(
             shape: CircleBorder(),
             color: Colors.transparent,
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(1),
+          child: Padding(
+            padding: const EdgeInsets.all(1),
             child: Icon(
               Icons.check_circle,
               color: Colors.green,
-              size: AppIcon.i80,
+              size: width * 0.18,
             ),
           ),
         )

@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/resources/values_manager.dart';
 
 class AppCalendar extends StatelessWidget {
-  DateTime? date;
-  AppCalendar({
-    Key? key,
-    this.date,
-  }) : super(key: key);
+  final DateTime? date;
+  final String? weekday;
+  final TextStyle? weekdaystyle;
+  final TextStyle? daystyle;
+
+  final TextStyle? monthstyle;
+
+
+  const AppCalendar({Key? key, this.date, this.weekday, this.weekdaystyle, this.daystyle, this.monthstyle, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +21,21 @@ class AppCalendar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-        Text("THU", style: TextStyle(fontSize: width * 0.045, color: Colors.black)
+        Text(weekday ?? "THU",
+            style: weekdaystyle ?? TextStyle(fontSize: width * 0.045, color: Colors.black)
             //  TextStyle(
             //   color: Colors.black54,
             //   fontSize: FontSize.s14,
             // ),
             ),
         Text(date == null ? '05' : date!.day.toString(),
-            style: TextStyle(fontSize: width * 0.045, color: Colors.black)),
+            style: daystyle ?? TextStyle(fontSize: width * 0.045, color: Colors.black)),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: AppPadding.p3),
           child: Container(height: 1.0, width: 30.0, color: Colors.black54),
         ),
-        Text("APR", style: TextStyle(fontSize: width * 0.045, color: Colors.black)),
+        Text("APR",
+            style: monthstyle ?? TextStyle(fontSize: width * 0.045, color: Colors.black)),
       ],
     );
   }

@@ -7,19 +7,28 @@ class Button1 extends StatelessWidget {
   final TextStyle? titlestyle;
   final Function? onclick;
   final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? buttonstylepadding;
+
   final Size? size;
   const Button1(
-      {Key? key, required this.title, this.onclick, this.titlestyle, this.size, this.padding})
+      {Key? key,
+      required this.title,
+      this.onclick,
+      this.titlestyle,
+      this.size,
+      this.buttonstylepadding,
+      this.padding})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(AppPadding.p8),
       child: TextButton(
         key: key,
         child: Padding(
-          padding: padding??const EdgeInsets.all(8.0),
+          padding: padding ?? const EdgeInsets.all(8.0),
           child: AutoSizeText(
             title,
             style: titlestyle ?? const TextStyle(color: Colors.white),
@@ -31,6 +40,7 @@ class Button1 extends StatelessWidget {
         style: TextButton.styleFrom(
           minimumSize: size ?? Size(MediaQuery.of(context).size.width - 50, 50),
           primary: Colors.white, //Text Color
+          padding: buttonstylepadding ?? EdgeInsets.all(width * 0.03),
           backgroundColor: Colors.black, //Button Background Color
         ),
         onPressed: () {
