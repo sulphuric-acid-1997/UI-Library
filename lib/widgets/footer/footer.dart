@@ -47,18 +47,18 @@ class FooterItem extends StatelessWidget {
 class Footer extends StatelessWidget {
   final List<FooterItem> widgets;
   final String? assets;
+  final double height;
   const Footer({
     Key? key,
     required this.widgets,
-    this.assets,
+    this.assets, required this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Container(
-        // height: 8 * unitHeightValue,
+        height: height ,
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 225, 225, 225)),
-
         child: Column(
           children: [
             assets != null
