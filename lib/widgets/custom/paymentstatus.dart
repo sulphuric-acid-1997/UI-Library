@@ -9,13 +9,19 @@ class PaymentStatus extends StatelessWidget {
   final String transcationNo;
   final String amountpaid;
   final String bank;
+  final TextStyle? titlestyle;
+  final TextStyle? subtitlestyle;
+  final double? iconsize;
 
   const PaymentStatus(
       {Key? key,
       required this.status,
       required this.transcationNo,
       required this.amountpaid,
-      required this.bank})
+      required this.bank,
+      this.titlestyle,
+      this.iconsize,
+      this.subtitlestyle})
       : super(key: key);
 
   @override
@@ -45,7 +51,7 @@ class PaymentStatus extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              _getStatusIcon(),
+              _getStatusIcon(iconsize: iconsize),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               Text(
                 status == Status.Done
@@ -79,9 +85,17 @@ class PaymentStatus extends StatelessWidget {
                 indent: 0.5,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              getRow('Amount Paid:', '$amountpaid(AED)'),
+              getRow(
+                  title: 'Amount Paid:',
+                  subtitle: '$amountpaid(AED)',
+                  subtitlestyle: subtitlestyle,
+                  titlestyle: titlestyle),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              getRow('Bank:', bank),
+              getRow(
+                  title: 'Bank:',
+                  subtitle: bank,
+                  subtitlestyle: subtitlestyle,
+                  titlestyle: titlestyle),
             ],
           ),
         ),
@@ -90,54 +104,62 @@ class PaymentStatus extends StatelessWidget {
   }
 }
 
-Widget getRow(String title, String subtitle) {
+Widget getRow(
+    {required String title,
+    TextStyle? titlestyle,
+    TextStyle? subtitlestyle,
+    required String subtitle}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       Text(title,
-          style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.grey)
-              .copyWith(color: Colors.black)
+          style: titlestyle ??
+              const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey)
+                  .copyWith(color: Colors.black)
           // getSemiBoldStyle(
           //   color: Colors.black87,
           //   fontSize: FontSize.s16,
           // ),
           ),
       Text(subtitle,
-          style: const TextStyle(
-              fontSize: 15, fontWeight: FontWeight.normal, color: Colors.grey)),
+          style: subtitlestyle ??
+              const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.grey)),
     ],
   );
 }
 
 enum Status { Done, Pending, Fail }
 
-Widget _getStatusIcon({Status status = Status.Done}) {
+Widget _getStatusIcon({Status status = Status.Done, double? iconsize}) {
   if (status == Status.Done) {
-    return const Icon(
+    return Icon(
       Icons.check_circle,
       color: Colors.green,
-      size: AppIcon.i60,
+      size: iconsize ?? AppIcon.i60,
     );
   } else if (status == Status.Pending) {
-    return const Icon(
+    return Icon(
       Icons.watch_later,
       color: Colors.yellow,
-      size: AppIcon.i60,
+      size: iconsize ?? AppIcon.i60,
     );
   } else if (status == Status.Fail) {
-    return const Icon(
+    return Icon(
       Icons.cancel,
       color: Colors.red,
-      size: AppIcon.i60,
+      size: iconsize ?? AppIcon.i60,
     );
   } else {
-    return const Icon(
+    return Icon(
       Icons.error,
       color: Colors.blueAccent,
-      size: AppIcon.i60,
+      size: iconsize ?? AppIcon.i60,
     );
   }
 }
