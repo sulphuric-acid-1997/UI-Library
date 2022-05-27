@@ -4,12 +4,16 @@ class NumberPlate extends StatelessWidget {
   final String place;
   final String series;
   final String number;
+  final TextStyle? placestyle;
+  final TextStyle? seriesstyle;
+  final TextStyle? numberstyle;
+
 
   const NumberPlate({
     Key? key,
     required this.place,
     required this.series,
-    required this.number,
+    required this.number, this.placestyle, this.seriesstyle, this.numberstyle,
   }) : super(key: key);
 
   @override
@@ -27,19 +31,19 @@ class NumberPlate extends StatelessWidget {
           Column(
             children: [
               Text(place.toUpperCase(),
-                  style: TextStyle(
+                  style: placestyle ?? TextStyle(
                           fontSize: width * 0.06, fontWeight: FontWeight.w500)
                       .copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold)),
               Text(series.toUpperCase(),
-                  style: TextStyle(
+                  style: seriesstyle ?? TextStyle(
                           fontSize: width * 0.06, fontWeight: FontWeight.w500)
                       .copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold)),
             ],
           ),
           Text(number,
-              style: TextStyle(
+              style: numberstyle ?? TextStyle(
                 fontSize: width * 0.12,
                 fontStyle: FontStyle.normal,
               ).copyWith(color: Colors.black, fontWeight: FontWeight.bold)),

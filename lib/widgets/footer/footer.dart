@@ -60,6 +60,7 @@ class Footer extends StatelessWidget {
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 225, 225, 225)),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             assets != null
                 ? const SizedBox(
