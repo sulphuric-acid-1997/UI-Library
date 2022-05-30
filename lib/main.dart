@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_lib/pages/overview_page.dart';
-import 'package:flutter_ui_lib/sampledata/data.dart';
-import 'package:flutter_ui_lib/widgets/form/buttons.dart';
-import 'package:flutter_ui_lib/widgets/listviewitems/listitem.dart';
-import 'package:flutter_ui_lib/widgets/test.dart';
+import 'package:widget_with_codeview/widget_with_codeview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,52 +53,28 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var space = const SizedBox(height: 20.0);
     return Scaffold(
-        appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ListItem.notification(data: data[0]),
-              ListItem.request(
-                  onclick: () {},
-                  date: DateTime.now(),
-                  companyName: 'companyName',
-                  status: 'status',
-                  approvalemail: 'approvalemail',
-                  department: 'department'),
-
-              const Button(
-                title: 'test button',
-              ),
-              Testwidget.emoji(
-                text: 'hello',
-              ),
-              // Testwidget.text(text:'hello'),
-              // ElevatedButton(
-              //     onPressed: () {
-              //       Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //             builder: (context) => const CustomAppBarPage()),
-              //       );
-              //     },
-              //     child: const Text('AppBar')),
-              // space,
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const OverviewPage()),
-                    );
-                  },
-                  child: const Text('OverviewTile'))
-            ],
-          ),
-        ));
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: const WidgetWithCodeView(
+        child: Text('widget here'),
+        sourceFilePath: 'sample/main.dart',
+        codeLinkPrefix: 'https://google.com?q=',
+        iconBackgroundColor: Color.fromARGB(146, 18, 54, 153),
+        iconForegroundColor: Colors.pink,
+        labelBackgroundColor: Color.fromARGB(146, 18, 54, 153),
+        // labelTextStyle: const TextStyle(color: Colors.green),
+        // showLabelText: true,
+        // syntaxHighlighterStyle:
+        //     SyntaxHighlighterStyle.darkThemeStyle().copyWith(
+        //   commentStyle: const TextStyle(color: Colors.yellow),
+        //   keywordStyle: const TextStyle(color: Colors.lightGreen),
+        //   classStyle: const TextStyle(color: Colors.amber),
+        //   numberStyle: const TextStyle(color: Colors.orange),
+        // ),
+      ),
+    );
   }
 }
