@@ -16,6 +16,11 @@ class WidgetWithCodeView extends StatefulWidget {
   final Color? iconForegroundColor;
   final Color? labelBackgroundColor;
   final TextStyle? labelTextStyle;
+  final double? height;
+  final double? width;
+  final String? title;
+  final String? description;
+
   final SyntaxHighlighterStyle? syntaxHighlighterStyle;
 
   const WidgetWithCodeView({
@@ -29,8 +34,9 @@ class WidgetWithCodeView extends StatefulWidget {
     this.labelBackgroundColor,
     this.labelTextStyle,
     this.syntaxHighlighterStyle,
+    this.height,
+    this.width, this.title, this.description,
   }) : super(key: key);
-
 
   @override
   _WidgetWithCodeViewState createState() => _WidgetWithCodeViewState();
@@ -38,17 +44,6 @@ class WidgetWithCodeView extends StatefulWidget {
 
 class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
     with SingleTickerProviderStateMixin {
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   String get routeName => '/${this.runtimeType.toString()}';
 
   Widget get sourceCodeView => SourceCodeView(
@@ -64,30 +59,40 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Color.fromARGB(146, 18, 54, 153),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('title'),
-                Text('description'),
+    return Container(
+      // height: widget.height ?? 300,
+      color: Color(0xFF242526),
 
-                _AlwaysAliveWidget(child: this.widget.child),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text('title'),
+          Text('description'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                  
+                  child: this.widget.child,
+                ),
+                Expanded(
+                  
+                  child: Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: SizedBox(
+                        width: 600, height: 250, child: this.sourceCodeView),
+                  ),
+                ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                width: 600,
-                height: 250,
-                child: this.sourceCodeView),
-            ),
-          ],
-        ),
+          ),
+          Divider(
+            color: Colors.black,
+          ),
+        ],
       ),
     );
   }

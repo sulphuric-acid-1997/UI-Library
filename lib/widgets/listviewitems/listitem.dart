@@ -27,6 +27,10 @@ class ListItem extends StatelessWidget {
   late bool notification;
   late bool request;
 
+  late TextStyle? companyNamestyle;
+  late TextStyle? approvalemailstyle;
+  late TextStyle? departmenttyle;
+
   ListItem.notification({
     Key? key,
     required this.data,
@@ -47,6 +51,9 @@ class ListItem extends StatelessWidget {
     this.weekdaystyle,
     this.daystyle,
     this.monthstyle,
+    this.companyNamestyle,
+    this.approvalemailstyle,
+    this.departmenttyle,
   })  : request = true,
         notification = false,
         super(key: key);
@@ -63,9 +70,15 @@ class ListItem extends StatelessWidget {
           onclick: () {},
           date: DateTime.now(),
           companyName: 'company name',
+          companyNamestyle: companyNamestyle,
           status: 'status',
           approvalemail: 'approvalemail',
-          department: 'department');
+          approvalemailstyle: approvalemailstyle,
+          department: 'department',
+          weekdaystyle: weekdaystyle,
+          monthstyle: monthstyle,
+          daystyle: daystyle,
+          departmenttyle: departmenttyle);
     }
 
     return const Text('use named construtor please');

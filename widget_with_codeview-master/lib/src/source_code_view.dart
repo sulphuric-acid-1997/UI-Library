@@ -26,7 +26,7 @@ class SourceCodeView extends StatefulWidget {
     this.iconForegroundColor,
     this.labelBackgroundColor,
     this.labelTextStyle,
-    this.syntaxHighlighterStyle,
+    this.syntaxHighlighterStyle
   }) : super(key: key);
 
   String? get codeLink => this.codeLinkPrefix == null
@@ -41,14 +41,25 @@ class SourceCodeView extends StatefulWidget {
 
 class _SourceCodeViewState extends State<SourceCodeView> {
   double _textScaleFactor = 1.0;
+   SyntaxHighlighterStyle? syntaxHighlighterStylemain = SyntaxHighlighterStyle(
+    baseStyle: TextStyle(color: Colors.white),
+    numberStyle: TextStyle(color: Colors.blue),
+    commentStyle: TextStyle(color: Colors.grey),
+    keywordStyle: TextStyle(color: Colors.blue),
+    stringStyle: TextStyle(color: Colors.orange),
+    punctuationStyle: TextStyle(color: Colors.blue),
+    classStyle: TextStyle(color: Colors.pink),
+    constantStyle: TextStyle(color: Colors.blue),);
 
   Widget _getCodeView(String codeContent, BuildContext context) {
     codeContent = codeContent.replaceAll('\r\n', '\n');
-    final SyntaxHighlighterStyle style = widget.syntaxHighlighterStyle ??
+    final SyntaxHighlighterStyle style = syntaxHighlighterStylemain ??
         (Theme.of(context).brightness == Brightness.dark
             ? SyntaxHighlighterStyle.darkThemeStyle()
             : SyntaxHighlighterStyle.lightThemeStyle());
     return Container(
+      color: Color(0xFF242526),
+      
       // margin: EdgeInsets.all(8.0),
       
       constraints: BoxConstraints.expand(),
@@ -133,6 +144,8 @@ class _SourceCodeViewState extends State<SourceCodeView> {
           }),
         ),
       ];
+
+
 
   @override
   Widget build(BuildContext context) {

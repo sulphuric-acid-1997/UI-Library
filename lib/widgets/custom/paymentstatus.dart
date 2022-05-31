@@ -10,6 +10,10 @@ class PaymentStatus extends StatelessWidget {
   final String amountpaid;
   final String bank;
   final TextStyle? titlestyle;
+  final TextStyle? headingstyle;
+  final TextStyle? transcationstyle;
+
+
   final TextStyle? subtitlestyle;
   final double? iconsize;
 
@@ -21,7 +25,7 @@ class PaymentStatus extends StatelessWidget {
       required this.bank,
       this.titlestyle,
       this.iconsize,
-      this.subtitlestyle})
+      this.subtitlestyle, this.headingstyle, this.transcationstyle})
       : super(key: key);
 
   @override
@@ -57,7 +61,7 @@ class PaymentStatus extends StatelessWidget {
                 status == Status.Done
                     ? "Payment Successful!"
                     : "Payment Failed!",
-                style: TextStyle(
+                style: headingstyle ?? TextStyle(
                         fontSize: width * 0.06, fontWeight: FontWeight.w500)
                     .copyWith(color: Colors.black),
                 // TextStyle(
@@ -69,7 +73,7 @@ class PaymentStatus extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Text(
                 "Transaction Number : $transcationNo",
-                style: TextStyle(
+                style:transcationstyle ?? TextStyle(
                         fontSize: width * 0.04, fontWeight: FontWeight.w300)
                     .copyWith(color: Colors.grey),
                 // TextStyle(
