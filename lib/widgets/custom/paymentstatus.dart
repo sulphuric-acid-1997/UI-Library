@@ -88,7 +88,7 @@ class PaymentStatus extends StatelessWidget {
                 thickness: 1,
                 indent: 0.5,
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               getRow(
                   title: 'Amount Paid:',
                   subtitle: '$amountpaid(AED)',

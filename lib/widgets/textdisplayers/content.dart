@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Conttent extends StatefulWidget {
@@ -30,7 +31,7 @@ class _ConttentState extends State<Conttent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          AutoSizeText(
             widget.title,
             style: widget.titlestyle ??
                 const TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
@@ -44,12 +45,12 @@ class _ConttentState extends State<Conttent> {
                 ),
           const SizedBox(height: 20),
           !_isExpanded
-              ? Text(
+              ? AutoSizeText(
                   initbody,
                   style: widget.bodystyle ??
                       const TextStyle(fontSize: 20, color: Colors.black),
                 )
-              : Text(
+              : AutoSizeText(
                   widget.body,
                   style: widget.bodystyle ??
                       const TextStyle(fontSize: 20, color: Colors.black),
@@ -58,7 +59,7 @@ class _ConttentState extends State<Conttent> {
           !_isExpanded
               ? InkWell(
                   onTap: () => setState(() => _isExpanded = !_isExpanded),
-                  child: Text(
+                  child: AutoSizeText(
                     'Read More',
                     style: const TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w300)
@@ -70,7 +71,7 @@ class _ConttentState extends State<Conttent> {
                 )
               : InkWell(
                   onTap: () => setState(() => _isExpanded = !_isExpanded),
-                  child: Text(
+                  child: AutoSizeText(
                     'Read Less',
                     style: const TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w300)

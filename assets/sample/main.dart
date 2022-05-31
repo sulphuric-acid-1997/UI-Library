@@ -35,13 +35,13 @@ class WidgetWithCodeView extends StatefulWidget {
     Tab(
       child: ListTile(
         leading: Icon(Icons.phone_android, color: Colors.white),
-        title: Text('Preview', style: TextStyle(color: Colors.white)),
+        title: AutoSizeText('Preview', style: TextStyle(color: Colors.white)),
       ),
     ),
     Tab(
       child: ListTile(
         leading: Icon(Icons.code, color: Colors.white),
-        title: Text('Code', style: TextStyle(color: Colors.white)),
+        title: AutoSizeText('Code', style: TextStyle(color: Colors.white)),
       ),
     ),
   ];

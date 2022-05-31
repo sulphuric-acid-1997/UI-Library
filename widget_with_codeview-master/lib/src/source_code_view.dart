@@ -93,7 +93,8 @@ class _SourceCodeViewState extends State<SourceCodeView> {
     required bool showLabelText,
   }) =>
       [
-        if (this.widget.codeLink != null)
+        
+        // if (this.widget.codeLink != null)
           SpeedDialChild(
             child: Icon(Icons.content_copy),
             labelWidget: showLabelText ? Text('Copy code to clipboard') : null,

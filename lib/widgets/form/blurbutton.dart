@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class BlurButton extends StatelessWidget {
@@ -11,7 +12,7 @@ class BlurButton extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return TextButton(
       onPressed: () => onPressed,
-      child: Text(
+      child: AutoSizeText(
         title,
         style: TextStyle(fontSize: width * 0.045, color: Colors.black)
             .copyWith(color: Colors.black),

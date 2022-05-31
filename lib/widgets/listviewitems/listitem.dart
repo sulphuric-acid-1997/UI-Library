@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_ui_lib/widgets/listviewitems/notificationitem.dart';
 import 'package:flutter_ui_lib/widgets/listviewitems/requestitem.dart';
@@ -81,6 +82,6 @@ class ListItem extends StatelessWidget {
           departmenttyle: departmenttyle);
     }
 
-    return const Text('use named construtor please');
+    return const AutoSizeText('use named construtor please');
   }
 }

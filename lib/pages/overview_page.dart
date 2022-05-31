@@ -9,7 +9,7 @@ class OverviewPage extends StatelessWidget {
     var space = const SizedBox(height: 10);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Overview Tile'),
+        title: const AutoSizeText('Overview Tile'),
       ),
       body: Center(
         child: Column(

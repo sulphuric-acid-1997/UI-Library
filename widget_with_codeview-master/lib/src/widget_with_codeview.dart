@@ -35,7 +35,9 @@ class WidgetWithCodeView extends StatefulWidget {
     this.labelTextStyle,
     this.syntaxHighlighterStyle,
     this.height,
-    this.width, this.title, this.description,
+    this.width,
+    this.title,
+    this.description,
   }) : super(key: key);
 
   @override
@@ -56,47 +58,107 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
         labelBackgroundColor: widget.labelBackgroundColor,
         syntaxHighlighterStyle: widget.syntaxHighlighterStyle,
       );
+  TabController? _tabController;
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      // height: widget.height ?? 300,
-      color: Color(0xFF242526),
-
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text('title'),
-          Text('description'),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  
-                  child: this.widget.child,
-                ),
-                Expanded(
-                  
-                  child: Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: SizedBox(
-                        width: 600, height: 250, child: this.sourceCodeView),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Divider(
-            color: Colors.black,
-          ),
-        ],
-      ),
-    );
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
   }
-}
+
+  @override
+  void dispose() {
+    _tabController!.dispose();
+    super.dispose();
+  }
+
+  static const _TABS = <Widget>[
+    Tab(
+      child: ListTile(
+        leading: Icon(Icons.phone_android, color: Colors.white),
+        title: Text('Preview', style: TextStyle(color: Colors.white)),
+      ),
+    ),
+    Tab(
+      child: ListTile(
+        leading: Icon(Icons.code, color: Colors.white),
+        title: Text('Code', style: TextStyle(color: Colors.white)),
+      ),
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    // return LayoutBuilder(
+    //     builder: (BuildContext context, BoxConstraints constraints) {
+    //   if (constraints.maxWidth < 900) {
+    //     return Scaffold(
+    //       body: Column(
+    //         children: [
+    //            TabBar(
+    //           controller: _tabController,
+    //           tabs: _TABS,
+    //         ),
+    //           SizedBox(
+    //             height: 300,
+    //             child: TabBarView(
+    //               controller: _tabController,
+    //               children: <Widget>[
+    //                 _AlwaysAliveWidget(child: this.widget.child),
+    //                 _AlwaysAliveWidget(child: this.sourceCodeView),
+    //               ],
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     );
+    //   } else {
+        return Container(
+          margin: EdgeInsets.all(1),
+          // height: widget.height ?? 300,R
+          color: Color(0xFF242526),
+
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                child: Text(
+                  '${widget.title}\n${widget.description}',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Wrap(
+                  spacing: 10,
+                  runSpacing: 30,
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                     this.widget.child,
+                    
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(0.0),
+                      child: SizedBox(
+                          width: 600,
+                          height: 250,
+                          child: this.sourceCodeView),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    // });
+  }
+
 
 // This widget is always kept alive, so that when tab is switched back, its
 // child's state is still preserved.

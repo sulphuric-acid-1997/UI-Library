@@ -16,7 +16,10 @@ class RequestItem extends StatelessWidget {
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
-    this.monthstyle, this.companyNamestyle, this.approvalemailstyle, this.departmenttyle,
+    this.monthstyle,
+    this.companyNamestyle,
+    this.approvalemailstyle,
+    this.departmenttyle,
   }) : super(key: key);
 
   // final RequestListDataModel data;
@@ -31,7 +34,6 @@ class RequestItem extends StatelessWidget {
   final String approvalemail;
 
   final String department;
-
 
   final DateTime? caldate;
   final String? weekday;
@@ -81,9 +83,10 @@ class RequestItem extends StatelessWidget {
                               children: [
                                 AutoSizeText(
                                   companyName,
-                                  style:companyNamestyle ?? TextStyle(
-                                      fontSize: width * 0.045,
-                                      color: Colors.black),
+                                  style: companyNamestyle ??
+                                      TextStyle(
+                                          fontSize: width * 0.045,
+                                          color: Colors.black),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -95,20 +98,24 @@ class RequestItem extends StatelessWidget {
                                   child: Padding(
                                     padding:
                                         const EdgeInsets.all(AppPadding.p8),
-                                    child: Text(status),
+                                    child: AutoSizeText(status),
                                   ),
                                 )
                               ],
                             ),
                             AutoSizeText(
                               department,
-                              style: departmenttyle ?? TextStyle(
-                                  fontSize: width * 0.045, color: Colors.black),
+                              style: departmenttyle ??
+                                  TextStyle(
+                                      fontSize: width * 0.045,
+                                      color: Colors.black),
                             ),
                             AutoSizeText(
                               approvalemail,
-                              style: approvalemailstyle ?? TextStyle(
-                                  fontSize: width * 0.045, color: Colors.black),
+                              style: approvalemailstyle ??
+                                  TextStyle(
+                                      fontSize: width * 0.045,
+                                      color: Colors.black),
                             ),
                           ],
                         ),

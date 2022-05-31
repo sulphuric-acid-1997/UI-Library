@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -22,7 +23,7 @@ class Header extends StatelessWidget {
           ),
         ),
         Center(
-            child: Text(title,
+            child: AutoSizeText(title,
                 style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.06,
                         fontWeight: FontWeight.w500)

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import 'helpers/decorators.dart';
@@ -39,7 +40,7 @@ class Dropdown1 extends StatelessWidget {
       items: options.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
-          child: Text(value),
+          child: AutoSizeText(value),
         );
       }).toList(),
     );

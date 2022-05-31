@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/sampledata/data.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
@@ -75,32 +74,34 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
+          title: AutoSizeText(widget.title),
         ),
         body: ListView(
           children: <Widget>[
             const WidgetWithCodeView(
-              height: 500,
+              // height: 500,
               child: SizedBox(
-                height: 60,
+                height: 600,
+                width: 500,
                 child: GatePassTicket(
+                  expand: 2.2,
+                    daystyle: TextStyle(fontSize: 20),
+                monthstyle: TextStyle(fontSize: 20),
+                weekdaystyle: TextStyle(fontSize: 20),
                   company: 'Anteriorsoft Pvt Ltd',
-                  // companystyle: texttheme.headline4!.copyWith(
-                  //     fontWeight: FontWeightManager.bold, color: Colors.black),
+                  companystyle: TextStyle(fontSize: 20),
                   imageurl:
                       'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
                   subtext: 'Ajman, United Arab Emirates',
+                  subtextstyle: TextStyle(fontSize: 20),
                   name: 'Abulebbeh Aleks',
-                  // namestyle: texttheme.headline4,
-                  // weekdaystyle: texttheme.headlineMedium,
-                  // daystyle: texttheme.headline4!.copyWith(color: Colors.black),
-                  // monthstyle: texttheme.bodyText2,
                 ),
               ),
               sourceFilePath: 'sample/numberplate.dart',
+              
             ),
             const WidgetWithCodeView(
-              height: 500,
+              
               child: AppCalendar(
                 daystyle: TextStyle(fontSize: 20),
                 monthstyle: TextStyle(fontSize: 20),
@@ -109,9 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/numberplate.dart',
             ),
             const WidgetWithCodeView(
-              height: 500,
+              
               child: SizedBox(
                 height: 60,
+                width: 500,
                 child: NumberPlate(
                   place: 'Dubai',
                   placestyle: TextStyle(
@@ -288,28 +290,31 @@ class _MyHomePageState extends State<MyHomePage> {
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             WidgetWithCodeView(
-              child: ListItem.notification(data: data[0]),
+              child: SizedBox(width: 450, child: ListItem.notification(data: data[0])),
               sourceFilePath: 'sample/notificationlistitem.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             WidgetWithCodeView(
-              child: ListItem.request(
-                onclick: () {},
-                date: DateTime.now(),
-                weekdaystyle:
-                    const TextStyle(color: Colors.black, fontSize: 20),
-                daystyle: const TextStyle(color: Colors.black, fontSize: 20),
-                monthstyle: const TextStyle(color: Colors.black, fontSize: 20),
-                companyName: 'companyName',
-                companyNamestyle:
-                    const TextStyle(color: Colors.black, fontSize: 30),
-                status: 'status',
-                approvalemailstyle:
-                    const TextStyle(color: Colors.black, fontSize: 30),
-                approvalemail: 'approvalemail',
-                department: 'department',
-                departmenttyle:
-                    const TextStyle(color: Colors.black, fontSize: 30),
+              child: SizedBox(
+                width: 450,
+                child: ListItem.request(
+                  onclick: () {},
+                  date: DateTime.now(),
+                  weekdaystyle:
+                      const TextStyle(color: Colors.black, fontSize: 20),
+                  daystyle: const TextStyle(color: Colors.black, fontSize: 20),
+                  monthstyle: const TextStyle(color: Colors.black, fontSize: 20),
+                  companyName: 'companyName',
+                  companyNamestyle:
+                      const TextStyle(color: Colors.black, fontSize: 30),
+                  status: 'status',
+                  approvalemailstyle:
+                      const TextStyle(color: Colors.black, fontSize: 30),
+                  approvalemail: 'approvalemail',
+                  department: 'department',
+                  departmenttyle:
+                      const TextStyle(color: Colors.black, fontSize: 30),
+                ),
               ),
               sourceFilePath: 'sample/requestlistiem.dart',
               // codeLinkPrefix: 'https://google.com?q=',

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class OverviewTile extends StatelessWidget {
@@ -25,10 +26,10 @@ class OverviewTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
+          AutoSizeText(title,
               style: TextStyle(color: titleColor, fontSize: titleFontSize)),
           space,
-          Text(subTitle,
+          AutoSizeText(subTitle,
               style: TextStyle(
                   color: subTitleColor.withOpacity(0.5),
                   fontSize: subTitleFontSize)),
