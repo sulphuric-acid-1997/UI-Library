@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/resources/font_manager.dart';
 
@@ -20,7 +21,7 @@ class FooterItem extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         TextButton(
-          child: Text(title,
+          child: AutoSizeText(title,
               style: style ??
                   const TextStyle(
                     color: Colors.black,
@@ -34,7 +35,7 @@ class FooterItem extends StatelessWidget {
         if (!showline)
           const SizedBox(
             // width: 10,
-            child: Text(
+            child: AutoSizeText(
               '|',
               textAlign: TextAlign.center,
             ),
@@ -51,12 +52,13 @@ class Footer extends StatelessWidget {
   const Footer({
     Key? key,
     required this.widgets,
-    this.assets, required this.height,
+    this.assets,
+    required this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Container(
-        height: height ,
+        height: height,
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 225, 225, 225)),
         child: Column(

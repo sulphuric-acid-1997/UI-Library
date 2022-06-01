@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class NumberPlate extends StatelessWidget {
@@ -9,7 +10,7 @@ class NumberPlate extends StatelessWidget {
   final TextStyle? numberstyle;
 
 
-  const NumberPlate({
+  const   NumberPlate({
     Key? key,
     required this.place,
     required this.series,
@@ -30,19 +31,19 @@ class NumberPlate extends StatelessWidget {
         children: [
           Column(
             children: [
-              Text(place.toUpperCase(),
+              AutoSizeText(place.toUpperCase(),
                   style: placestyle ?? TextStyle(
                           fontSize: width * 0.06, fontWeight: FontWeight.w500)
                       .copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold)),
-              Text(series.toUpperCase(),
+              AutoSizeText(series.toUpperCase(),
                   style: seriesstyle ?? TextStyle(
                           fontSize: width * 0.06, fontWeight: FontWeight.w500)
                       .copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold)),
             ],
           ),
-          Text(number,
+          AutoSizeText(number,
               style: numberstyle ?? TextStyle(
                 fontSize: width * 0.12,
                 fontStyle: FontStyle.normal,

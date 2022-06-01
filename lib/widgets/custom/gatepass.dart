@@ -12,10 +12,12 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? companystyle;
   final String subtext;
   final TextStyle? subtextstyle;
-  final DateTime? date;
+  final DateTime date;
   final String? weekday;
   final TextStyle? weekdaystyle;
   final TextStyle? daystyle;
+  final double expand;
+  final double? height;
 
   final TextStyle? monthstyle;
 
@@ -26,74 +28,80 @@ class GatePassTicket extends StatelessWidget {
     this.namestyle,
     required this.company,
     this.companystyle,
+    this.expand = 1,
     this.subtext = 'Ajman, United Arab Emirates',
     this.subtextstyle,
-    this.date,
+    required this.date,
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
-    this.monthstyle,
+    this.monthstyle, this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     return Stack(
       alignment: Alignment.topCenter,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.only(top: AppPadding.p10),
           child: Container(
-            margin: EdgeInsets.all(width * 0.015),
+            height: height,
+            margin: EdgeInsets.all((width * 0.015) / expand),
             child: Card(
-              margin: EdgeInsets.all(width * 0.05),
+              
+              margin: EdgeInsets.all((width * 0.05) / expand),
               color: Colors.white,
               elevation: AppSize.s5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(AppSize.s15),
               ),
               child: Padding(
-                padding: EdgeInsets.all(width * 0.06),
+                padding: EdgeInsets.all((width * 0.06) / expand),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                    SizedBox(height: (height * 0.03) / expand),
                     Container(
-                      width: width * 0.25,
-                      height: width * 0.25,
+                      width: (width * 0.25) / expand,
+                      height:  (width * 0.25) / expand,
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         image: DecorationImage(
                           image: NetworkImage(imageurl),
                           fit: BoxFit.cover,
                         ),
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(width * 0.125)),
+                        borderRadius: BorderRadius.all(
+                            Radius.circular((width * 0.125) / expand)),
                         border: Border.all(
                           color: Colors.black26,
                           width: 2.0,
                         ),
                       ),
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    SizedBox(height: (height * 0.02) / expand),
                     Text(
                       name,
                       style: namestyle ??
                           TextStyle(
-                              fontSize: width * 0.045, color: Colors.black),
+                              fontSize: (width * 0.045) / expand,
+                              color: Colors.black),
                       // TextStyle(
                       //   color: Colors.black,
                       //   fontWeight: FontWeight.w400,
                       //   fontSize: FontSize.s20,
                       // ),
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                    SizedBox(height: (height * 0.01) / expand),
                     Text(
                       "Visitor Pass",
                       style: TextStyle(
-                        fontSize: width * 0.07,
+                        fontSize: (width * 0.07) / expand,
                         fontStyle: FontStyle.normal,
                       ).copyWith(
                         color: Colors.black,
@@ -105,7 +113,7 @@ class GatePassTicket extends StatelessWidget {
                       //   fontSize: FontSize.s29,
                       // ),
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                    SizedBox(height: (height * 0.05) / expand),
                     const Divider(
                       color: Colors.grey,
                       thickness: 1,
@@ -124,7 +132,7 @@ class GatePassTicket extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          width: width * 0.05,
+                          width: (width * 0.05) / expand,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -133,7 +141,7 @@ class GatePassTicket extends StatelessWidget {
                             Text(company,
                                 style: companystyle ??
                                     TextStyle(
-                                            fontSize: width * 0.05,
+                                            fontSize: (width * 0.05) / expand,
                                             fontWeight: FontWeight.w300)
                                         .copyWith(
                                             fontWeight: FontWeightManager.bold,
@@ -144,13 +152,11 @@ class GatePassTicket extends StatelessWidget {
                                 //   fontSize: FontSize.s18,
                                 // ),
                                 ),
-                            SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.01),
+                            SizedBox(height: (height * 0.01) / expand),
                             Text(subtext,
                                 style: subtextstyle ??
                                     TextStyle(
-                                        fontSize: width * 0.04,
+                                        fontSize: (width * 0.04) / expand,
                                         fontWeight: FontWeight.w300)
                                 // TextStyle(
                                 //   color: Colors.black,
@@ -162,7 +168,7 @@ class GatePassTicket extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                    SizedBox(height: (height * 0.01) / expand),
                   ],
                 ),
               ),
@@ -170,8 +176,8 @@ class GatePassTicket extends StatelessWidget {
           ),
         ),
         Container(
-          width: width * 0.2,
-          height: width * 0.2,
+          width: (width * 0.2) / expand,
+          height: (width * 0.2) / expand,
           decoration: const ShapeDecoration(
             shape: CircleBorder(),
             color: Colors.transparent,
@@ -181,7 +187,7 @@ class GatePassTicket extends StatelessWidget {
             child: Icon(
               Icons.check_circle,
               color: Colors.green,
-              size: width * 0.18,
+              size: (width * 0.18) / expand,
             ),
           ),
         )

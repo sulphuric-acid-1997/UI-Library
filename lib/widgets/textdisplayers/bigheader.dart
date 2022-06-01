@@ -2,13 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class BigHeader extends StatelessWidget {
-  final String imageassets;
+  final String imageurl;
   final String title;
   final TextStyle? titlestyle;
   const BigHeader(
       {Key? key,
       this.title = 'Lorem ipsum dolor sit amet, consectetur',
-      this.imageassets = 'assets/images/pcfc_logo.jpeg',
+      this.imageurl = 'https://ibb.co/2gCbQ67',
       this.titlestyle})
       : super(key: key);
   @override
@@ -29,8 +29,8 @@ class BigHeader extends StatelessWidget {
             Row(
               children: const [],
             ),
-            Image.asset(
-              imageassets,
+            Image.network(
+              imageurl,
               height: 50,
             ),
             // SizedBox(

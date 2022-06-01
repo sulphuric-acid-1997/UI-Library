@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import '../../resources/values_manager.dart';
 
 class CaptionBgblur extends StatelessWidget {
+  final String? title;
   const CaptionBgblur({
-    Key? key,
+    Key? key, this.title,
   }) : super(key: key);
 
   @override
@@ -26,7 +27,7 @@ class CaptionBgblur extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 225, 225, 225)
                       .withOpacity(0.4)),
-              child: AutoSizeText(
+              child: AutoSizeText( title ??
                 "Instrumental in Past... \nInvested in Future",
                 minFontSize: AppSize.s20,
                 style: TextStyle(

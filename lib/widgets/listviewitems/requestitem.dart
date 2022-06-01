@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
 import '../../resources/values_manager.dart';
@@ -11,22 +12,30 @@ class RequestItem extends StatelessWidget {
     required this.status,
     required this.approvalemail,
     required this.department,
-    this.caldate,
+    required this.caldate,
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
     this.monthstyle,
+    this.companyNamestyle,
+    this.approvalemailstyle,
+    this.departmenttyle,
   }) : super(key: key);
 
   // final RequestListDataModel data;
   final Function onclick;
   final DateTime date;
   final String companyName;
+  final TextStyle? companyNamestyle;
+  final TextStyle? approvalemailstyle;
+  final TextStyle? departmenttyle;
+
   final String status;
   final String approvalemail;
+
   final String department;
 
-  final DateTime? caldate;
+  final DateTime caldate;
   final String? weekday;
   final TextStyle? weekdaystyle;
   final TextStyle? daystyle;
@@ -72,11 +81,12 @@ class RequestItem extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
+                                AutoSizeText(
                                   companyName,
-                                  style: TextStyle(
-                                      fontSize: width * 0.045,
-                                      color: Colors.black),
+                                  style: companyNamestyle ??
+                                      TextStyle(
+                                          fontSize: width * 0.045,
+                                          color: Colors.black),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -88,20 +98,24 @@ class RequestItem extends StatelessWidget {
                                   child: Padding(
                                     padding:
                                         const EdgeInsets.all(AppPadding.p8),
-                                    child: Text(status),
+                                    child: AutoSizeText(status),
                                   ),
                                 )
                               ],
                             ),
-                            Text(
+                            AutoSizeText(
                               department,
-                              style: TextStyle(
-                                  fontSize: width * 0.045, color: Colors.black),
+                              style: departmenttyle ??
+                                  TextStyle(
+                                      fontSize: width * 0.045,
+                                      color: Colors.black),
                             ),
-                            Text(
+                            AutoSizeText(
                               approvalemail,
-                              style: TextStyle(
-                                  fontSize: width * 0.045, color: Colors.black),
+                              style: approvalemailstyle ??
+                                  TextStyle(
+                                      fontSize: width * 0.045,
+                                      color: Colors.black),
                             ),
                           ],
                         ),

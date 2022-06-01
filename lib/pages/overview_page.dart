@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/widgets/textdisplayers/overview_tile.dart';
 
@@ -9,7 +10,7 @@ class OverviewPage extends StatelessWidget {
     var space = const SizedBox(height: 10);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Overview Tile'),
+        title: const AutoSizeText('Overview Tile'),
       ),
       body: Center(
         child: Column(
