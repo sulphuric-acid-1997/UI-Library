@@ -264,7 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   titleColor: Colors.white,
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/overViewTile.dart',
             ),
             const WidgetWithCodeView(
               title: 'Header',
@@ -275,12 +275,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: 'title',
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/header.dart',
             ),
             const WidgetWithCodeView(
               title: 'Content displayer',
               child: SizedBox(
-                width: 250,
+                width: 500,
+
                 child: Conttent(
                   body:
                       'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
@@ -291,7 +292,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/contentDisplayer.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             const WidgetWithCodeView(
@@ -301,7 +302,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 500,
                 child: CaptionBgblur(),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/captionBgBlur.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             const WidgetWithCodeView(
@@ -314,9 +315,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   titlestyle: TextStyle(color: Colors.black, fontSize: 20),
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/bigHeader.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
+
             WidgetWithCodeView(
               title: 'Notification List Item',
               child: SizedBox(
