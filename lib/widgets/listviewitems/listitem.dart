@@ -25,8 +25,8 @@ class ListItem extends StatelessWidget {
   late TextStyle? monthstyle;
   late NotificationDataModel data;
 
-  late bool notification;
-  late bool request;
+  late bool notification = false;
+  late bool request = false;
 
   late TextStyle? companyNamestyle;
   late TextStyle? approvalemailstyle;
@@ -36,7 +36,6 @@ class ListItem extends StatelessWidget {
     Key? key,
     required this.data,
   })  : notification = true,
-        request = false,
         super(key: key);
 
   ListItem.request({
@@ -56,7 +55,6 @@ class ListItem extends StatelessWidget {
     this.approvalemailstyle,
     this.departmenttyle,
   })  : request = true,
-        notification = false,
         super(key: key);
 
   @override
