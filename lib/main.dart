@@ -80,11 +80,14 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const WidgetWithCodeView(
               // height: 500,
+              title: 'Vistor pass',
+              description: 'Vistor pass',
               child: SizedBox(
                 height: 600,
                 width: 500,
                 child: GatePassTicket(
-                  expand: 2.2,
+                  expand: 2,
+                  height: 500,
                     daystyle: TextStyle(fontSize: 20),
                 monthstyle: TextStyle(fontSize: 20),
                 weekdaystyle: TextStyle(fontSize: 20),
@@ -93,24 +96,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   imageurl:
                       'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
                   subtext: 'Ajman, United Arab Emirates',
-                  subtextstyle: TextStyle(fontSize: 20),
+                  subtextstyle: TextStyle(fontSize: 15),
                   name: 'Abulebbeh Aleks',
                 ),
               ),
-              sourceFilePath: 'sample/numberplate.dart',
+              sourceFilePath: 'sample/vistorpass.dart',
               
             ),
-            const WidgetWithCodeView(
-              
-              child: AppCalendar(
-                daystyle: TextStyle(fontSize: 20),
-                monthstyle: TextStyle(fontSize: 20),
-                weekdaystyle: TextStyle(fontSize: 20),
+              const WidgetWithCodeView(
+                title: 'App Calendar',
+                child: AppCalendar(
+                  // date: DateTime.now(),
+                  daystyle: TextStyle(fontSize: 20),
+                  monthstyle: TextStyle(fontSize: 20),
+                  weekdaystyle: TextStyle(fontSize: 20),
+                ),
+                sourceFilePath: 'sample/numberplate.dart',
               ),
-              sourceFilePath: 'sample/numberplate.dart',
-            ),
             const WidgetWithCodeView(
-              
+              title: 'Number Plate',
               child: SizedBox(
                 height: 60,
                 width: 500,
@@ -132,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/numberplate.dart',
             ),
             const WidgetWithCodeView(
+              title: 'Payment Status',
               height: 500,
               child: SizedBox(
                 height: 350,
@@ -152,6 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             const WidgetWithCodeView(
+              title: 'Vehicle Details',
               child: SizedBox(
                 height: 250,
                 width: 400,
@@ -176,6 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             WidgetWithCodeView(
+              title: 'Input Text Fields',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -184,6 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             WidgetWithCodeView(
+              title: 'Drop down',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -194,16 +202,16 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             const WidgetWithCodeView(
-              child: SizedBox(
-                height: 200,
-                width: 500,
-                child: Button1(
+              title: 'Button',
+              child:  Button1(
+                size: Size(300, 30),
                   title: 'title',
                 ),
-              ),
+              
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             WidgetWithCodeView(
+              title: 'Blur Button',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -215,6 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             WidgetWithCodeView(
+              title: 'Footer',
               child: SizedBox(
                 height: 50,
                 width: 500,
@@ -236,17 +245,21 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             const WidgetWithCodeView(
+              title: 'Overview Tile',
               child: SizedBox(
                 height: 200,
                 width: 500,
                 child: OverviewTile(
                   subTitle: 'subtitle',
+                  subTitleColor: Colors.white,
                   title: 'title',
+                  titleColor: Colors.white,
                 ),
               ),
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             const WidgetWithCodeView(
+              title: 'Header',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -257,18 +270,20 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             const WidgetWithCodeView(
-              child: SizedBox(
-                height: 200,
-                width: 500,
-                child: Conttent(
-                  body: 'body',
-                  title: 'title',
-                ),
-              ),
+              title:'Content displayer',
+               child : SizedBox(
+                 width: 250,
+                 child: Conttent(
+                    body: 'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
+                    title: 'title',
+                  ),
+               ),
+              
               sourceFilePath: 'sample/notificationlistitem.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             const WidgetWithCodeView(
+              title: 'Caption with Blur Background',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -278,6 +293,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             const WidgetWithCodeView(
+              title: 'Big Header',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -290,11 +306,13 @@ class _MyHomePageState extends State<MyHomePage> {
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             WidgetWithCodeView(
+              title: 'Notification List Item',
               child: SizedBox(width: 450, child: ListItem.notification(data: data[0])),
               sourceFilePath: 'sample/notificationlistitem.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
             WidgetWithCodeView(
+              title: 'Request List Item',
               child: SizedBox(
                 width: 450,
                 child: ListItem.request(

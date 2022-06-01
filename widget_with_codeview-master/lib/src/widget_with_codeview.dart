@@ -113,9 +113,13 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
     //     );
     //   } else {
         return Container(
-          margin: EdgeInsets.all(1),
+          margin: EdgeInsets.all(5),
           // height: widget.height ?? 300,R
+          // color: Color(0xFF242526),
+          decoration: BoxDecoration(
           color: Color(0xFF242526),
+            borderRadius: BorderRadius.circular(10),
+          ),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
