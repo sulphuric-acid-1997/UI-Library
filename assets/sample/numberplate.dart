@@ -13,4 +13,4 @@ NumberPlate(
   numberstyle: TextStyle(
     fontSize: 20,
   ),
-),
+);
