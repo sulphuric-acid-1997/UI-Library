@@ -12,12 +12,9 @@ import 'package:flutter_ui_lib/widgets/form/button.dart';
 import 'package:flutter_ui_lib/widgets/form/dropdown.dart';
 import 'package:flutter_ui_lib/widgets/form/textfiled.dart';
 import 'package:flutter_ui_lib/widgets/listviewitems/listitem.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/bigheader.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/captionbgblur.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/content.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/header.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/overview_tile.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
+
+import 'widgets/textdisplayers/textDisplayers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'Vistor pass',
               description: 'Custom ui for visitor pass ',
               child: SizedBox(
-                height: 600,
+                // height: 600,
                 width: 500,
                 child: GatePassTicket(
                   expand: 2,
@@ -109,16 +106,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'App Calendar',
-              description: 'Custom ui to display dynamic calendar by passing DateTime', 
+              description:
+                  'Custom ui to display dynamic calendar by passing DateTime',
+
               child: SizedBox(
                 width: 400,
                 child: Center(
                   child: AppCalendar(
                     date: DateTime.now(),
                     color: Colors.white,
-                    daystyle: const TextStyle(fontSize: 20, color: Colors.white),
-                    monthstyle: const TextStyle(fontSize: 20, color: Colors.white),
-                    weekdaystyle: const TextStyle(fontSize: 20, color: Colors.white),
+
+                    daystyle:
+                        const TextStyle(fontSize: 20, color: Colors.white),
+                    monthstyle:
+                        const TextStyle(fontSize: 20, color: Colors.white),
+                    weekdaystyle:
+                        const TextStyle(fontSize: 20, color: Colors.white),
+
                   ),
                 ),
               ),
@@ -167,11 +171,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   transcationNo: '1232415435345',
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/paymentstatus.dart',
             ),
             const WidgetWithCodeView(
               title: 'Vehicle Details',
-              description: 'this widget is to display vehicle details. pass required data',
+
+              description:
+                  'this widget is to display vehicle details. pass required data',
+
               child: SizedBox(
                 height: 250,
                 width: 400,
@@ -193,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       TextStyle(color: Colors.black, fontSize: 20),
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/vechiledetails.dart',
             ),
             WidgetWithCodeView(
               title: 'Input Text Fields',
@@ -201,9 +208,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: TextField1(),
+                child: Center(child: TextField1()),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/textfield.dart',
             ),
             WidgetWithCodeView(
               title: 'Drop down',
@@ -212,25 +219,32 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: Dropdown1(
-                  options: const ['one', 'two'],
+                child: Center(
+                  child: Dropdown1(
+                    initvalue: 'one',
+                    options: const ['one', 'two'],
+                    hinttext: 'select one',
+                    // pass controller to access data
+                  ),
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/dropdown.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Button',
               description: 'form input button pass action',
               child: Button1(
-                size: Size(300, 10),
+
+                size: const Size(300, 10),
+
                 title: 'title',
+                onclick: () {},
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/button.dart',
             ),
             WidgetWithCodeView(
               title: 'Blur Button',
               description: 'form input Blur button pass action',
-
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -239,11 +253,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: 'title',
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/blurbutton.dart',
             ),
             WidgetWithCodeView(
               title: 'Footer',
-              description: 'footer needs footer itemm to display items in footer',
+
+              description:
+                  'footer needs footer itemm to display items in footer',
+
               child: SizedBox(
                 height: 50,
                 width: 500,
@@ -262,15 +279,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              sourceFilePath: 'sample/notificationlistitem.dart',
+              sourceFilePath: 'sample/footer.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Overview Tile',
               description: 'text displayer overview tile',
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: OverviewTile(
+                child: TextDisplayers.overViewTile(
                   subTitle: 'subtitle',
                   subTitleColor: Colors.white,
                   title: 'title',
@@ -279,67 +296,68 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               sourceFilePath: 'sample/overViewTile.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Header',
               description: 'Display Header',
 
               child: SizedBox(
-                height: 200,
+                // height: 200,
                 width: 500,
-                child: Header(
+                child: TextDisplayers.header(
                   title: 'title',
                 ),
               ),
               sourceFilePath: 'sample/header.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Content displayer',
               description: 'display title body and also image by passing them',
               child: SizedBox(
-                width: 500,
 
-                child: Conttent(
-                  body:
-                      'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
-                  bodystyle: TextStyle(fontSize: 15, color: Colors.white),
-                  readmorestyle: TextStyle(fontSize: 20, color: Colors.white),
-                  title: 'title',
-                  titlestyle: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-              ),
+                  width: 500,
+                  child: TextDisplayers.content(
+                    body:
+                        'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
+                    bodystyle:
+                        const TextStyle(fontSize: 20, color: Colors.white),
+                    readmorestyle:
+                        const TextStyle(fontSize: 20, color: Colors.white),
+                    title: 'title',
+                    titlestyle:
+                        const TextStyle(fontSize: 20, color: Colors.white),
+                  )),
 
               sourceFilePath: 'sample/contentDisplayer.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Caption with Blur Background',
               description: 'display Caption with background blur',
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: CaptionBgblur(),
+                child: TextDisplayers.captionBgBlur(),
               ),
               sourceFilePath: 'sample/captionBgBlur.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Big Header',
               description: 'display big header with title',
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: BigHeader(
-                  title: 'Widget With Code View',
-                  titlestyle: TextStyle(color: Colors.black, fontSize: 20),
-                ),
+                child: TextDisplayers.bigHeader(title: 'Widget With Code View'),
               ),
               sourceFilePath: 'sample/bigHeader.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
-
             WidgetWithCodeView(
               title: 'Notification List Item',
-              description: 'List item for notification to display notifications in a list',
+
+              description:
+                  'List item for notification to display notifications in a list',
+
 
               child: SizedBox(
                   width: 450, child: ListItem.notification(data: data[0])),
@@ -348,7 +366,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Request List Item',
-              description: 'List item for Request to display Requests in a list',
+
+              description:
+                  'List item for Request to display Requests in a list',
+
 
               child: SizedBox(
                 width: 450,
