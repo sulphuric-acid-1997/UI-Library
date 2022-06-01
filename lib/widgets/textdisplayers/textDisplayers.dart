@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/widgets/ui-lib.dart';
 
 import 'bigheader.dart';
+import 'captionbgblur.dart';
+import 'content.dart';
+import 'header.dart';
+import 'overview_tile.dart';
 
 class TextDisplayers extends StatelessWidget {
   late bool bigHeader = false;
@@ -21,7 +25,6 @@ class TextDisplayers extends StatelessWidget {
   late String subTitle;
   late Color? subTitleColor;
   late Color? titleColor;
-
 
   TextDisplayers({
     Key? key,
@@ -42,16 +45,19 @@ class TextDisplayers extends StatelessWidget {
     this.titlestyle,
   })  : content = true,
         super(key: key);
-    
-  TextDisplayers.header({Key? key, required this.title,})
-      : header = true,
+
+  TextDisplayers.header({
+    Key? key,
+    required this.title,
+  })  : header = true,
         super(key: key);
 
-  TextDisplayers.overViewTile({Key? key,
-        required this.title,
-  required this.subTitle,
-        this.subTitleColor,
-        this.titleColor})
+  TextDisplayers.overViewTile(
+      {Key? key,
+      required this.title,
+      required this.subTitle,
+      this.subTitleColor,
+      this.titleColor})
       : overViewTile = true,
         super(key: key);
 
@@ -60,7 +66,8 @@ class TextDisplayers extends StatelessWidget {
     if (bigHeader) {
       return BigHeader(
         title: title,
-        titlestyle: titlestyle ?? TextStyle(color: Colors.black, fontSize: 20),
+        titlestyle:
+            titlestyle ?? const TextStyle(color: Colors.black, fontSize: 20),
       );
     }
     if (captionBgBlur) {
@@ -70,10 +77,13 @@ class TextDisplayers extends StatelessWidget {
     if (content) {
       return Conttent(
         body: body ?? 'title',
-        bodystyle: bodystyle ?? TextStyle(fontSize: 20, color: Colors.white),
-        readmorestyle: readmorestyle ?? TextStyle(fontSize: 20, color: Colors.white),
+        bodystyle:
+            bodystyle ?? const TextStyle(fontSize: 20, color: Colors.white),
+        readmorestyle:
+            readmorestyle ?? const TextStyle(fontSize: 20, color: Colors.white),
         title: title,
-        titlestyle: titlestyle ?? TextStyle(fontSize: 20, color: Colors.white),
+        titlestyle:
+            titlestyle ?? const TextStyle(fontSize: 20, color: Colors.white),
       );
     }
 
@@ -87,7 +97,7 @@ class TextDisplayers extends StatelessWidget {
         subTitle: subTitle,
         subTitleColor: subTitleColor ?? Colors.white,
         title: title,
-        titleColor: titleColor?? Colors.white,
+        titleColor: titleColor ?? Colors.white,
       );
     }
 

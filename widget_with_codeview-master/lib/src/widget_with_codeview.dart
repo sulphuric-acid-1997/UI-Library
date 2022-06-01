@@ -152,7 +152,7 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
                   crossAxisAlignment: WrapCrossAlignment.center,
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                     this.widget.child,
+                    _AlwaysAliveWidget(child: this.widget.child),
                     
                     SizedBox(
                       width: 20,
@@ -162,7 +162,8 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
                       child: SizedBox(
                           width: 600,
                           height: 250,
-                          child: this.sourceCodeView),
+                   child: _AlwaysAliveWidget(child: this.sourceCodeView),
+                           ),
                     ),
                   ],
                 ),
