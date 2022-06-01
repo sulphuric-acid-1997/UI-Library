@@ -12,8 +12,8 @@ import 'package:flutter_ui_lib/widgets/form/button.dart';
 import 'package:flutter_ui_lib/widgets/form/dropdown.dart';
 import 'package:flutter_ui_lib/widgets/form/textfiled.dart';
 import 'package:flutter_ui_lib/widgets/listviewitems/listitem.dart';
-import 'package:widget_with_codeview/widget_with_codeview.dart';
 
+import 'codewithwidget/widget_with_codeview.dart';
 import 'widgets/textdisplayers/textDisplayers.dart';
 
 void main() {
