@@ -12,7 +12,7 @@ class RequestItem extends StatelessWidget {
     required this.status,
     required this.approvalemail,
     required this.department,
-    this.caldate,
+    required this.caldate,
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
@@ -35,7 +35,7 @@ class RequestItem extends StatelessWidget {
 
   final String department;
 
-  final DateTime? caldate;
+  final DateTime caldate;
   final String? weekday;
   final TextStyle? weekdaystyle;
   final TextStyle? daystyle;

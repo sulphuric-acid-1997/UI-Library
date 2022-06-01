@@ -1,5 +1,4 @@
 
-
  GatePassTicket(
                   expand: 2,
                   height: 500,
@@ -14,3 +13,4 @@
                   subtextstyle: TextStyle(fontSize: 15),
                   name: 'Abulebbeh Aleks',
                 ),
+                

@@ -81,39 +81,45 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: ListView(
           children: <Widget>[
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               // height: 500,
               title: 'Vistor pass',
-              description: 'Vistor pass',
+              description: 'Custom ui for visitor pass ',
               child: SizedBox(
                 height: 600,
                 width: 500,
                 child: GatePassTicket(
                   expand: 2,
                   height: 500,
-                  daystyle: TextStyle(fontSize: 20),
-                  monthstyle: TextStyle(fontSize: 20),
-                  weekdaystyle: TextStyle(fontSize: 20),
+                  daystyle: const TextStyle(fontSize: 20),
+                  monthstyle: const TextStyle(fontSize: 20),
+                  weekdaystyle: const TextStyle(fontSize: 20),
                   company: 'Anteriorsoft Pvt Ltd',
-                  companystyle: TextStyle(fontSize: 20),
+                  companystyle: const TextStyle(fontSize: 20),
                   imageurl:
                       'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
                   subtext: 'Ajman, United Arab Emirates',
-                  subtextstyle: TextStyle(fontSize: 15),
+                  subtextstyle: const TextStyle(fontSize: 15),
                   name: 'Abulebbeh Aleks',
+                  date: DateTime.now(),
                 ),
               ),
               sourceFilePath: 'sample/vistorpass.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'App Calendar',
-              child: AppCalendar(
-                // date: DateTime.now(),
-                daystyle: TextStyle(fontSize: 20),
-                monthstyle: TextStyle(fontSize: 20),
-                weekdaystyle: TextStyle(fontSize: 20),
+              child: SizedBox(
+                width: 400,
+                child: Center(
+                  child: AppCalendar(
+                    date: DateTime.now(),
+                    daystyle: const TextStyle(fontSize: 20, color: Colors.white),
+                    monthstyle: const TextStyle(fontSize: 20, color: Colors.white),
+                    weekdaystyle: const TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
               ),
-              sourceFilePath: 'sample/numberplate.dart',
+              sourceFilePath: 'sample/appclaender.dart',
             ),
             const WidgetWithCodeView(
               title: 'Number Plate',
@@ -139,9 +145,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Payment Status',
+              description: 'This widget is to display payment status',
               height: 500,
               child: SizedBox(
-                height: 350,
+                height: 380,
                 width: 500,
                 child: PaymentStatus(
                   status: Status.Done,

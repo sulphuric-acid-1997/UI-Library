@@ -12,7 +12,7 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? companystyle;
   final String subtext;
   final TextStyle? subtextstyle;
-  final DateTime? date;
+  final DateTime date;
   final String? weekday;
   final TextStyle? weekdaystyle;
   final TextStyle? daystyle;
@@ -31,7 +31,7 @@ class GatePassTicket extends StatelessWidget {
     this.expand = 1,
     this.subtext = 'Ajman, United Arab Emirates',
     this.subtextstyle,
-    this.date,
+    required this.date,
     this.weekday,
     this.weekdaystyle,
     this.daystyle,

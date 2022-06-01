@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/resources/values_manager.dart';
-
-class AppCalendar extends StatelessWidget {
-  final DateTime? date;
+import 'package:intl/intl.dart';
+class AppCalendar extends StatefulWidget {
+  final DateTime date;
   final String? weekday;
   final TextStyle? weekdaystyle;
   final TextStyle? daystyle;
@@ -12,12 +12,29 @@ class AppCalendar extends StatelessWidget {
 
   const AppCalendar({
     Key? key,
-    this.date,
+    required this.date,
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
     this.monthstyle,
   }) : super(key: key);
+
+  @override
+  State<AppCalendar> createState() => _AppCalendarState();
+}
+
+class _AppCalendarState extends State<AppCalendar> {
+  @override
+  void initState() {
+    print("=============date==============");
+    print(widget.date);
+    print(DateFormat('EEEE').format(widget.date));
+    print(DateFormat('d').format(widget.date));
+    print(DateFormat('MMMM').format(widget.date));
+
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,23 +45,23 @@ class AppCalendar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-        AutoSizeText(weekday ?? "THU",
-            style: weekdaystyle ??
+        AutoSizeText(DateFormat('EEEE').format(widget.date).toString().substring(0, 3).toUpperCase(),
+            style: widget.weekdaystyle ??
                 TextStyle(fontSize: width * 0.045, color: Colors.black)
             //  TextStyle(
             //   color: Colors.black54,
             //   fontSize: FontSize.s14,
             // ),
             ),
-        AutoSizeText(date == null ? '05' : date!.day.toString(),
-            style: daystyle ??
+        AutoSizeText(DateFormat('d').format(widget.date).toString(),
+            style: widget.daystyle ??
                 TextStyle(fontSize: width * 0.045, color: Colors.black)),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: AppPadding.p3),
           child: Container(height: 1.0, width: 30.0, color: Colors.black54),
         ),
-        AutoSizeText("APR",
-            style: monthstyle ??
+        AutoSizeText(DateFormat('MMMM').format(widget.date).toString().toUpperCase().substring(0, 3),
+            style: widget.monthstyle ??
                 TextStyle(fontSize: width * 0.045, color: Colors.black)),
       ],
     );
