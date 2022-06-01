@@ -113,7 +113,7 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
     //     );
     //   } else {
         return Container(
-          margin: EdgeInsets.all(5),
+          margin: EdgeInsets.all(20),
           // height: widget.height ?? 300,R
           // color: Color(0xFF242526),
           decoration: BoxDecoration(
@@ -156,6 +156,7 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
                   ],
                 ),
               ),
+              SizedBox(height: 20,)
             ],
           ),
         );

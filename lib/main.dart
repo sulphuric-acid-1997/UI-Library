@@ -72,6 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
     var space = const SizedBox(height: 20.0);
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFF242526),
+          foregroundColor: Colors.white,
+          centerTitle: true,
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
           title: AutoSizeText(widget.title),
@@ -88,9 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: GatePassTicket(
                   expand: 2,
                   height: 500,
-                    daystyle: TextStyle(fontSize: 20),
-                monthstyle: TextStyle(fontSize: 20),
-                weekdaystyle: TextStyle(fontSize: 20),
+                  daystyle: TextStyle(fontSize: 20),
+                  monthstyle: TextStyle(fontSize: 20),
+                  weekdaystyle: TextStyle(fontSize: 20),
                   company: 'Anteriorsoft Pvt Ltd',
                   companystyle: TextStyle(fontSize: 20),
                   imageurl:
@@ -101,18 +104,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               sourceFilePath: 'sample/vistorpass.dart',
-              
             ),
-              const WidgetWithCodeView(
-                title: 'App Calendar',
-                child: AppCalendar(
-                  // date: DateTime.now(),
-                  daystyle: TextStyle(fontSize: 20),
-                  monthstyle: TextStyle(fontSize: 20),
-                  weekdaystyle: TextStyle(fontSize: 20),
-                ),
-                sourceFilePath: 'sample/numberplate.dart',
+            const WidgetWithCodeView(
+              title: 'App Calendar',
+              child: AppCalendar(
+                // date: DateTime.now(),
+                daystyle: TextStyle(fontSize: 20),
+                monthstyle: TextStyle(fontSize: 20),
+                weekdaystyle: TextStyle(fontSize: 20),
               ),
+              sourceFilePath: 'sample/numberplate.dart',
+            ),
             const WidgetWithCodeView(
               title: 'Number Plate',
               child: SizedBox(
@@ -203,11 +205,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Button',
-              child:  Button1(
+              child: Button1(
                 size: Size(300, 30),
-                  title: 'title',
-                ),
-              
+                title: 'title',
+              ),
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             WidgetWithCodeView(
@@ -270,15 +271,19 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             const WidgetWithCodeView(
-              title:'Content displayer',
-               child : SizedBox(
-                 width: 250,
-                 child: Conttent(
-                    body: 'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
-                    title: 'title',
-                  ),
-               ),
-              
+              title: 'Content displayer',
+              child: SizedBox(
+                width: 250,
+                child: Conttent(
+                  body:
+                      'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
+                  bodystyle: TextStyle(fontSize: 20, color: Colors.white),
+                  readmorecolor: Colors.white,
+                  title: 'title',
+                  titlestyle: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+
               sourceFilePath: 'sample/notificationlistitem.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
@@ -307,7 +312,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Notification List Item',
-              child: SizedBox(width: 450, child: ListItem.notification(data: data[0])),
+              child: SizedBox(
+                  width: 450, child: ListItem.notification(data: data[0])),
               sourceFilePath: 'sample/notificationlistitem.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
@@ -321,7 +327,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   weekdaystyle:
                       const TextStyle(color: Colors.black, fontSize: 20),
                   daystyle: const TextStyle(color: Colors.black, fontSize: 20),
-                  monthstyle: const TextStyle(color: Colors.black, fontSize: 20),
+                  monthstyle:
+                      const TextStyle(color: Colors.black, fontSize: 20),
                   companyName: 'companyName',
                   companyNamestyle:
                       const TextStyle(color: Colors.black, fontSize: 30),

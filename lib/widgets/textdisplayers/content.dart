@@ -6,6 +6,8 @@ class Conttent extends StatefulWidget {
   final TextStyle? titlestyle;
   final String body;
   final TextStyle? bodystyle;
+  final Color? readmorecolor;
+
   final String? imgurl;
   const Conttent({
     Key? key,
@@ -13,7 +15,7 @@ class Conttent extends StatefulWidget {
     required this.body,
     this.titlestyle,
     this.bodystyle,
-    this.imgurl,
+    this.imgurl, this.readmorecolor,
   }) : super(key: key);
 
   @override
@@ -40,8 +42,7 @@ class _ConttentState extends State<Conttent> {
           widget.imgurl == null
               ? const SizedBox()
               : Center(
-                  child: Image.network(
-                      'https://img.freepik.com/free-vector/business-meeting-illustration-concept-people-presentation-conference-business-workflow-planning-strategy-vector-illustration-flat-style_7737-2358.jpg'),
+                  child: Image.network(widget.imgurl!),
                 ),
           const SizedBox(height: 20),
           !_isExpanded
@@ -64,7 +65,7 @@ class _ConttentState extends State<Conttent> {
                     style: const TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w300)
                         .copyWith(
-                      color: Colors.black,
+                      color:widget.readmorecolor ?? Colors.black,
                       decoration: TextDecoration.underline,
                     ),
                   ),
@@ -76,7 +77,7 @@ class _ConttentState extends State<Conttent> {
                     style: const TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w300)
                         .copyWith(
-                      color: Colors.black,
+                      color: widget.readmorecolor ?? Colors.black,
                       decoration: TextDecoration.underline,
                     ),
                   ),
