@@ -6,7 +6,7 @@ class Conttent extends StatefulWidget {
   final TextStyle? titlestyle;
   final String body;
   final TextStyle? bodystyle;
-  final Color? readmorecolor;
+  final TextStyle? readmorestyle;
 
   final String? imgurl;
   const Conttent({
@@ -15,7 +15,7 @@ class Conttent extends StatefulWidget {
     required this.body,
     this.titlestyle,
     this.bodystyle,
-    this.imgurl, this.readmorecolor,
+    this.imgurl, this.readmorestyle,
   }) : super(key: key);
 
   @override
@@ -62,10 +62,10 @@ class _ConttentState extends State<Conttent> {
                   onTap: () => setState(() => _isExpanded = !_isExpanded),
                   child: AutoSizeText(
                     'Read More',
-                    style: const TextStyle(
+                    style: widget.readmorestyle ?? const TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w300)
                         .copyWith(
-                      color:widget.readmorecolor ?? Colors.black,
+                      color: Colors.black,
                       decoration: TextDecoration.underline,
                     ),
                   ),
@@ -74,10 +74,10 @@ class _ConttentState extends State<Conttent> {
                   onTap: () => setState(() => _isExpanded = !_isExpanded),
                   child: AutoSizeText(
                     'Read Less',
-                    style: const TextStyle(
+                    style:  widget.readmorestyle ?? const TextStyle(
                             fontSize: 40, fontWeight: FontWeight.w300)
                         .copyWith(
-                      color: widget.readmorecolor ?? Colors.black,
+                      color:  Colors.black,
                       decoration: TextDecoration.underline,
                     ),
                   ),

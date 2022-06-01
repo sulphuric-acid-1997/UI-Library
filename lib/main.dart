@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter UI Library',
       theme: ThemeData(
         // This is the theme of your application.
@@ -108,11 +109,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'App Calendar',
+              description: 'Custom ui to display dynamic calendar by passing DateTime', 
               child: SizedBox(
                 width: 400,
                 child: Center(
                   child: AppCalendar(
                     date: DateTime.now(),
+                    color: Colors.white,
                     daystyle: const TextStyle(fontSize: 20, color: Colors.white),
                     monthstyle: const TextStyle(fontSize: 20, color: Colors.white),
                     weekdaystyle: const TextStyle(fontSize: 20, color: Colors.white),
@@ -123,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Number Plate',
+              description: 'Custom ui for vechile number plate',
               child: SizedBox(
                 height: 60,
                 width: 500,
@@ -167,6 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Vehicle Details',
+              description: 'this widget is to display vehicle details. pass required data',
               child: SizedBox(
                 height: 250,
                 width: 400,
@@ -192,6 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Input Text Fields',
+              description: 'form input text field pass controller',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -201,6 +207,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Drop down',
+              description: 'form input Drop down pass controller',
+
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -212,14 +220,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Button',
+              description: 'form input button pass action',
               child: Button1(
-                size: Size(300, 30),
+                size: Size(300, 10),
                 title: 'title',
               ),
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
             WidgetWithCodeView(
               title: 'Blur Button',
+              description: 'form input Blur button pass action',
+
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -232,6 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Footer',
+              description: 'footer needs footer itemm to display items in footer',
               child: SizedBox(
                 height: 50,
                 width: 500,
@@ -254,6 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Overview Tile',
+              description: 'text displayer overview tile',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -268,6 +281,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Header',
+              description: 'Display Header',
+
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -279,16 +294,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Content displayer',
+              description: 'display title body and also image by passing them',
               child: SizedBox(
                 width: 500,
 
                 child: Conttent(
                   body:
                       'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
-                  bodystyle: TextStyle(fontSize: 20, color: Colors.white),
-                  readmorecolor: Colors.white,
+                  bodystyle: TextStyle(fontSize: 15, color: Colors.white),
+                  readmorestyle: TextStyle(fontSize: 20, color: Colors.white),
                   title: 'title',
-                  titlestyle: TextStyle(fontSize: 20, color: Colors.white),
+                  titlestyle: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
 
@@ -297,6 +313,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Caption with Blur Background',
+              description: 'display Caption with background blur',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -307,6 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Big Header',
+              description: 'display big header with title',
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -321,6 +339,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
             WidgetWithCodeView(
               title: 'Notification List Item',
+              description: 'List item for notification to display notifications in a list',
+
               child: SizedBox(
                   width: 450, child: ListItem.notification(data: data[0])),
               sourceFilePath: 'sample/notificationlistitem.dart',
@@ -328,6 +348,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Request List Item',
+              description: 'List item for Request to display Requests in a list',
+
               child: SizedBox(
                 width: 450,
                 child: ListItem.request(
