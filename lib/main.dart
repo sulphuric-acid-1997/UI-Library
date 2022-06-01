@@ -108,21 +108,18 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'App Calendar',
               description:
                   'Custom ui to display dynamic calendar by passing DateTime',
-
               child: SizedBox(
                 width: 400,
                 child: Center(
                   child: AppCalendar(
                     date: DateTime.now(),
                     color: Colors.white,
-
                     daystyle:
                         const TextStyle(fontSize: 20, color: Colors.white),
                     monthstyle:
                         const TextStyle(fontSize: 20, color: Colors.white),
                     weekdaystyle:
                         const TextStyle(fontSize: 20, color: Colors.white),
-
                   ),
                 ),
               ),
@@ -215,7 +212,6 @@ class _MyHomePageState extends State<MyHomePage> {
             WidgetWithCodeView(
               title: 'Drop down',
               description: 'form input Drop down pass controller',
-
               child: SizedBox(
                 height: 200,
                 width: 500,
@@ -299,7 +295,6 @@ class _MyHomePageState extends State<MyHomePage> {
             WidgetWithCodeView(
               title: 'Header',
               description: 'Display Header',
-
               child: SizedBox(
                 // height: 200,
                 width: 500,
@@ -313,7 +308,6 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'Content displayer',
               description: 'display title body and also image by passing them',
               child: SizedBox(
-
                   width: 500,
                   child: TextDisplayers.content(
                     body:
@@ -326,7 +320,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     titlestyle:
                         const TextStyle(fontSize: 20, color: Colors.white),
                   )),
-
               sourceFilePath: 'sample/contentDisplayer.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
@@ -400,3 +393,4 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 }
+
