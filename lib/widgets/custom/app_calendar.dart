@@ -24,17 +24,7 @@ class AppCalendar extends StatefulWidget {
 }
 
 class _AppCalendarState extends State<AppCalendar> {
-  @override
-  void initState() {
-    print("=============date==============");
-    print(widget.date);
-    print(DateFormat('EEEE').format(widget.date));
-    print(DateFormat('d').format(widget.date));
-    print(DateFormat('MMMM').format(widget.date));
 
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

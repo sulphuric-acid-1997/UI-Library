@@ -7,4 +7,4 @@ Conttent(
   readmorecolor: Colors.white,
   title: 'title',
   titlestyle: TextStyle(fontSize: 20, color: Colors.white),
-)
+);
