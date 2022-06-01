@@ -12,12 +12,9 @@ import 'package:flutter_ui_lib/widgets/form/button.dart';
 import 'package:flutter_ui_lib/widgets/form/dropdown.dart';
 import 'package:flutter_ui_lib/widgets/form/textfiled.dart';
 import 'package:flutter_ui_lib/widgets/listviewitems/listitem.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/bigheader.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/captionbgblur.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/content.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/header.dart';
-import 'package:flutter_ui_lib/widgets/textdisplayers/overview_tile.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
+
+import 'widgets/textdisplayers/textDisplayers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'Vistor pass',
               description: 'Custom ui for visitor pass ',
               child: SizedBox(
-                height: 600,
+                // height: 600,
                 width: 500,
                 child: GatePassTicket(
                   expand: 2,
@@ -264,13 +261,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               sourceFilePath: 'sample/notificationlistitem.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Overview Tile',
               description: 'text displayer overview tile',
               child: SizedBox(
-                height: 200,
-                width: 500,
-                child: OverviewTile(
+                  height: 200,
+                  width: 500,
+                child: TextDisplayers.overViewTile(
                   subTitle: 'subtitle',
                   subTitleColor: Colors.white,
                   title: 'title',
@@ -279,64 +276,55 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               sourceFilePath: 'sample/overViewTile.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Header',
               description: 'Display Header',
 
               child: SizedBox(
-                height: 200,
+                // height: 200,
                 width: 500,
-                child: Header(
-                  title: 'title',
-                ),
+                child: TextDisplayers.header(title: 'title',),
               ),
               sourceFilePath: 'sample/header.dart',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Content displayer',
               description: 'display title body and also image by passing them',
               child: SizedBox(
-                width: 500,
-
-                child: Conttent(
-                  body:
-                      'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
-                  bodystyle: TextStyle(fontSize: 15, color: Colors.white),
-                  readmorestyle: TextStyle(fontSize: 20, color: Colors.white),
-                  title: 'title',
-                  titlestyle: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-              ),
-
+                  width: 500,
+                  child: TextDisplayers.content(
+                    body:
+                        'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
+                    bodystyle: TextStyle(fontSize: 20, color: Colors.white),
+                    readmorestyle: TextStyle(fontSize: 20, color: Colors.white),
+                    title: 'title',
+                    titlestyle: TextStyle(fontSize: 20, color: Colors.white),
+                  )),
               sourceFilePath: 'sample/contentDisplayer.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Caption with Blur Background',
               description: 'display Caption with background blur',
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: CaptionBgblur(),
+                child: TextDisplayers.captionBgBlur(),
               ),
               sourceFilePath: 'sample/captionBgBlur.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
-            const WidgetWithCodeView(
+            WidgetWithCodeView(
               title: 'Big Header',
               description: 'display big header with title',
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: BigHeader(
-                  title: 'Widget With Code View',
-                  titlestyle: TextStyle(color: Colors.black, fontSize: 20),
-                ),
+                child: TextDisplayers.bigHeader(title: 'Widget With Code View'),
               ),
               sourceFilePath: 'sample/bigHeader.dart',
               // codeLinkPrefix: 'https://google.com?q=',
             ),
-
             WidgetWithCodeView(
               title: 'Notification List Item',
               description: 'List item for notification to display notifications in a list',

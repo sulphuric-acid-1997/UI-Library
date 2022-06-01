@@ -1,5 +1,5 @@
-import 'package:flutter_ui_lib/widgets/textdisplayers/header.dart';
+import 'package:flutter_ui_lib/widgets/textdisplayers/textDisplayers.dart';
 
-Header(
+TextDisplayers.header(
   title: 'title',
 );

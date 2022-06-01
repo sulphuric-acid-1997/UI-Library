@@ -1,3 +1,3 @@
-import 'package:flutter_ui_lib/widgets/textdisplayers/captionbgblur.dart';
+import 'package:flutter_ui_lib/widgets/textdisplayers/textDisplayers.dart';
 
-CaptionBgblur()
+TextDisplayers.CaptionBgblur()

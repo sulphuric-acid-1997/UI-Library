@@ -1,8 +1,8 @@
-import 'package:flutter_ui_lib/widgets/textdisplayers/overview_tile.dart';
+import 'package:flutter_ui_lib/widgets/textdisplayers/textDisplayers.dart';
 
-OverviewTile(
+TextDisplayers.overViewTile(
   subTitle: 'subtitle',
   subTitleColor: Colors.white,
   title: 'title',
   titleColor: Colors.white,
-)
+),

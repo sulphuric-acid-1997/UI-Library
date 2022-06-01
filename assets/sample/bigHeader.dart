@@ -1,6 +1,6 @@
-import 'package:flutter_ui_lib/widgets/textdisplayers/bigheader.dart';
+import 'package:flutter_ui_lib/widgets/textdisplayers/textDisplayers.dart';
 
-BigHeader(
+TextDisplayers.BigHeader(
   title: 'Widget With Code View',
   titlestyle: TextStyle(color: Colors.black, fontSize: 20),
 )
