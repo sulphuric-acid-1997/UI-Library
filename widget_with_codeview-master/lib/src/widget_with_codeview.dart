@@ -126,10 +126,21 @@ class _WidgetWithCodeViewState extends State<WidgetWithCodeView>
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-                child: Text(
-                  '${widget.title}\n${widget.description}',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                padding: const EdgeInsets.fromLTRB(20, 20, 0, 10),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${widget.title}',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    Text(
+                      '${widget.description}',
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
+                  ],
                 ),
               ),
               Padding(

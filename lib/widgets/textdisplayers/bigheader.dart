@@ -8,7 +8,7 @@ class BigHeader extends StatelessWidget {
   const BigHeader(
       {Key? key,
       this.title = 'Lorem ipsum dolor sit amet, consectetur',
-      this.imageurl = 'https://ibb.co/2gCbQ67',
+      this.imageurl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png',
       this.titlestyle})
       : super(key: key);
   @override
