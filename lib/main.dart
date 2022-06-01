@@ -172,8 +172,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const WidgetWithCodeView(
               title: 'Vehicle Details',
+
               description:
                   'this widget is to display vehicle details. pass required data',
+
               child: SizedBox(
                 height: 250,
                 width: 400,
@@ -228,7 +230,9 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'Button',
               description: 'form input button pass action',
               child: Button1(
+
                 size: const Size(300, 10),
+
                 title: 'title',
                 onclick: () {},
               ),
@@ -249,8 +253,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Footer',
+
               description:
                   'footer needs footer itemm to display items in footer',
+
               child: SizedBox(
                 height: 50,
                 width: 500,
@@ -341,8 +347,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Notification List Item',
+
               description:
                   'List item for notification to display notifications in a list',
+
 
               child: SizedBox(
                   width: 450, child: ListItem.notification(data: data[0])),
@@ -351,8 +359,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Request List Item',
+
               description:
                   'List item for Request to display Requests in a list',
+
 
               child: SizedBox(
                 width: 450,
